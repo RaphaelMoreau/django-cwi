@@ -1,6 +1,6 @@
 {% extends 'www/base_loggedin.html' %}
 
-{% block title %}Application {{ application.name }}{% endblock %}
+{% block title %}Application {{ application.name }} <a href='{% url 'applicationUpdate' application.id %}'>Edit</a>{% endblock %}
 {% block content %}
   Name: {{ application.name }}<br/>
   Crypto Key: {{ application.cryptoKey }}<br/>

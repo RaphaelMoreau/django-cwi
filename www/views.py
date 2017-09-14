@@ -1,30 +1,24 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
+from django.views import generic
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Application
 
-@login_required()
+class applicationDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Application
 
-def applicationList(request):
-    apps = Application.objects.all()
-    context = {
-        'applications': apps
-    }
-    return render(request, 'www/application_list.html', context)
+class applicationListView(LoginRequiredMixin, generic.ListView):
+    model = Application
 
-def applicationDetail(request, pk):
-    app = get_object_or_404(Application, pk=pk)
-    context = {
-        'application': app
-    }
-    return render(request, "www/application_detail.html", context)
+class applicationCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Application
+    fields = [ 'name', 'cryptoKey' ]
 
-def applicationCreate(request):
-    try:
-        app = Application(name=request.POST['name'], cryptoKey=request.POST['key'])
-    except (KeyError):
-        return render(request, "www/application_create.html")
-    else:
-        app.save()
-        return HttpResponseRedirect(reverse('applicationDetail', args=(app.id,)))
+class applicationUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Application
+    fields = [ 'name', 'cryptoKey' ]

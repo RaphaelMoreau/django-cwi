@@ -1,0 +1,22 @@
+{% extends 'www/base_loggedin.html' %}
+
+{% block title %}
+  {% if object %}
+    Updating application {{ object.name }}
+  {%else%}
+    Creating new application
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type='submit' value="{% if object %}Update{% else %}Create{% endif %}"/><br/>
+  <br/>
+  {% if object %}
+    <a href='{% url 'applicationDetail' object.id %}'>Back to application</a>
+  {% else %}
+    <a href='{% url 'applicationList' %}'>Back to index</a>
+  {% endif %}
+{% endblock %}

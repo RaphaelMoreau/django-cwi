@@ -3,10 +3,10 @@
 {% block title %}Application list{% endblock %}
 {% block content %}
   <a href="{% url 'applicationCreate' %}">Create</a><br/>
-  {% if applications.count == 0 %}
+  {% if application_list.count == 0 %}
     No application defined<br/>
   {% else %}
-    {% for app in applications %}
+    {% for app in application_list %}
       <a href='{% url 'applicationDetail' app.id %}'>{{ app.name }}</a><br/>
     {% endfor %}
   {% endif %}
