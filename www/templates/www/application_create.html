@@ -1,0 +1,13 @@
+{% extends 'www/base_loggedin.html' %}
+
+{% block title %}New application{% endblock %}
+{% block content %}
+  {% if errorMessage %}<p class="error">{{ error_message }}</p>{% endif %}
+  <form action='{% url 'applicationCreate' %}' method='post'>
+  {% csrf_token %}
+  <label for="name">Name: <input type="text" id="name" name="name"/></label><br/>
+  <label for="key">Crypto Key: <input type="text" id="key" name="key"/></label><br/>
+  <input type='submit' value="Create"/><br/>
+  <br/>
+  <a href='{% url 'applicationList' %}'>Back to index</a>
+{% endblock %}

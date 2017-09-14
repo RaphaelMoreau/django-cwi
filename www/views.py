@@ -1,19 +1,30 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404, reverse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 
 from .models import Application
 
 @login_required()
-def index(request):
+
+def applicationList(request):
     apps = Application.objects.all()
     context = {
-        'apps': apps
+        'applications': apps
     }
-    return render(request, 'www/index.html', context)
+    return render(request, 'www/application_list.html', context)
 
-def appDetail(request, pk):
-    return HttpResponse("Display application "+pk)
+def applicationDetail(request, pk):
+    app = get_object_or_404(Application, pk=pk)
+    context = {
+        'application': app
+    }
+    return render(request, "www/application_detail.html", context)
 
-def appCreate(request):
-    return HttpResponse("Creating a new application")
+def applicationCreate(request):
+    try:
+        app = Application(name=request.POST['name'], cryptoKey=request.POST['key'])
+    except (KeyError):
+        return render(request, "www/application_create.html")
+    else:
+        app.save()
+        return HttpResponseRedirect(reverse('applicationDetail', args=(app.id,)))

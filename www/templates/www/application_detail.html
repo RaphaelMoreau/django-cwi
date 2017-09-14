@@ -1,0 +1,9 @@
+{% extends 'www/base_loggedin.html' %}
+
+{% block title %}Application {{ application.name }}{% endblock %}
+{% block content %}
+  Name: {{ application.name }}<br/>
+  Crypto Key: {{ application.cryptoKey }}<br/>
+  <br/>
+  <a href='{% url 'applicationList' %}'>Back to application list</a>
+{% endblock %}
