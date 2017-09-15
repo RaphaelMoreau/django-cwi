@@ -19,6 +19,12 @@ class applicationCreateView(LoginRequiredMixin, generic.CreateView):
     model = Application
     fields = [ 'name', 'cryptoKey' ]
 
+    def get_success_url(self):
+        return reverse('applicationDetail',args=(self.object.id,))
+
 class applicationUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Application
     fields = [ 'name', 'cryptoKey' ]
+
+    def get_success_url(self):
+        return reverse('applicationDetail',args=(self.object.id,))
