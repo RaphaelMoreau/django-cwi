@@ -3,11 +3,15 @@
 {% block title %}Application list{% endblock %}
 {% block content %}
   <a href="{% url 'applicationCreate' %}">Create</a><br/>
+  <div id="applicationList">
   {% if application_list.count == 0 %}
     No application defined<br/>
   {% else %}
     {% for app in application_list %}
-      <a href='{% url 'applicationDetail' app.id %}'>{{ app.name }}</a><br/>
+    <p>
+      <a href='{% url 'applicationDetail' app.id %}'><img class='icon' src='{{ app.icon.url }}'/>{{ app.name }}</a>
+    </p>
     {% endfor %}
   {% endif %}
+  </div>
 {% endblock %}

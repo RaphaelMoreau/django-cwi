@@ -4,6 +4,7 @@ from django.db import models
 class Application(models.Model):
     name = models.CharField(max_length=50, unique=True)
     cryptoKey = models.CharField("Cryptographic key",max_length=200)
+    icon = models.ImageField("Application icon",upload_to='appIcon')
 
     def __str__(self):
         return self.name

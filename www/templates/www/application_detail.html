@@ -2,6 +2,7 @@
 
 {% block title %}Application {{ application.name }} <a href='{% url 'applicationUpdate' application.id %}'>Edit</a>{% endblock %}
 {% block content %}
+  <img class='icon' src='{{ application.icon.url }}'/>
   Name: {{ application.name }}<br/>
   Crypto Key: {{ application.cryptoKey }}<br/>
   <br/>
