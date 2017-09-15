@@ -9,6 +9,24 @@ class Country(models.Model):
     def __str__(self):
         return "%s (%s)" % (self.name,self.codeA2)
 
+class Platform(models.Model):
+    name = models.CharField("Platform name", max_length=20)
+
+    def __str__(self):
+        return self.name
+
+class AdType(models.Model):
+    name = models.CharField("Ad type", max_length=20)
+
+    def __str__(self):
+        return self.name
+
+class AdPlace(models.Model):
+    name = models.CharField("Ad placement", max_length=20)
+
+    def __str__(self):
+        return self.name
+
 # Application
 class Application(models.Model):
     name = models.CharField(max_length=50, unique=True)
