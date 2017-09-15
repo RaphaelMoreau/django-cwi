@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.conf.urls import url,include
+from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 from . import views
@@ -23,3 +25,6 @@ urlpatterns = [
             views.applicationCreateView.as_view(),
             name='applicationCreate'),
 ]
+
+if settings.DEBUG is True:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
