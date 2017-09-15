@@ -6,5 +6,12 @@
   Name: {{ application.name }}<br/>
   Crypto Key: {{ application.cryptoKey }}<br/>
   <br/>
+  <h3>Ad configurations</h3>
+  {% for config in application.applicationadconfig_set.all %}
+    {{ config }}<br/>
+  {% empty %}
+    No ad configurations found<br/>
+  {% endfor %}
+  <br/>
   <a href='{% url 'applicationList' %}'>Back to application list</a>
 {% endblock %}
