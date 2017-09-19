@@ -6,9 +6,13 @@
   Name: {{ application.name }}<br/>
   Crypto Key: {{ application.cryptoKey }}<br/>
   <br/>
-  <h3>Ad configurations</h3>
+  <h3>Ad configurations
+    {% if application.applicationadconfig_set.count != countries %}
+    <a href="javascript:window.open('{% url 'applicationAddConfig' application.id %}','','width=400, height=150, directories=no, menubar=no, status=no, location=no')">add</a>
+    {% endif %}
+  </h3>
   {% for config in application.applicationadconfig_set.all %}
-    {{ config }}<br/>
+    {{ config.country.name }} <a href="javascript:window.open('{% url 'applicationDelConfig' application.id config.country.codeA2 %}','','width=400, height=150, directories=no, menubar=no, status=no, location=no')">Remove</a><br/>
   {% empty %}
     No ad configurations found<br/>
   {% endfor %}

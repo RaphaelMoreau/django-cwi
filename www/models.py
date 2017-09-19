@@ -40,6 +40,8 @@ class Application(models.Model):
 class ApplicationAdConfig(models.Model):
     application = models.ForeignKey(Application, on_delete=models.CASCADE)
     country = models.ForeignKey(Country, on_delete=models.PROTECT)
+    class Meta:
+        unique_together = ('application', 'country',)
 
     def __str__(self):
         return "%s-%s" % (self.application.name,self.country.name)

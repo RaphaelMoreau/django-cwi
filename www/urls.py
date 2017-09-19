@@ -24,6 +24,12 @@ urlpatterns = [
     url(    r'app/create/$',
             views.applicationCreateView.as_view(),
             name='applicationCreate'),
+    url(    r'app/(?P<pk>[0-9]+)/addConfig$',
+            views.applicationAddAdConfigurationView.as_view(),
+            name='applicationAddConfig'),
+    url(    r'app/(?P<appId>[0-9]+)/cfg/(?P<confId>([A-Z]{2}|\*))/del$',
+            views.applicationDelAdConfigurationView.as_view(),
+            name='applicationDelConfig'),
 ]
 
 if settings.DEBUG is True:
