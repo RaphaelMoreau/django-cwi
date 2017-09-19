@@ -7,7 +7,7 @@
   Crypto Key: {{ application.cryptoKey }}<br/>
   <br/>
   <h3>Ad configurations
-    {% if application.applicationadconfig_set.count != countries %}
+    {% if application.applicationadconfig_set.count < countries %}
     <a href="javascript:window.open('{% url 'applicationAddConfig' application.id %}','','width=400, height=150, directories=no, menubar=no, status=no, location=no')">add</a>
     {% endif %}
   </h3>

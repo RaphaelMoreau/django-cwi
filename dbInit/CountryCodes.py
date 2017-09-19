@@ -9,6 +9,6 @@ for p in reader:
     if first:
         first=False
     else:
-        c=Country(name=p[0],codeA2=p[1],codeA3=p[2])
+        c=Country(name=p[0], codeA2=p[1], codeA3=p[2], display=p[4])
         print(c)
         c.save()
