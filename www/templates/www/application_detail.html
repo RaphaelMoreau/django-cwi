@@ -7,15 +7,29 @@
   Crypto Key: {{ application.cryptoKey }}<br/>
   <br/>
   <h3>Ad configurations
-    {% if application.applicationadconfig_set.count < countries %}
-    <a href="javascript:window.open('{% url 'applicationAddConfig' application.id %}','','width=400, height=150, directories=no, menubar=no, status=no, location=no')">add</a>
+    {% if application.applicationadconfig_set.count < countries_count %}
+      <a href="javascript:popup('{% url 'applicationAddConfig' application.id %}')">Add</a>
     {% endif %}
   </h3>
+  <ul>
   {% for config in application.applicationadconfig_set.all %}
-    {{ config.country.name }} <a href="javascript:window.open('{% url 'applicationDelConfig' application.id config.country.codeA2 %}','','width=400, height=150, directories=no, menubar=no, status=no, location=no')">Remove</a><br/>
+    <li>{{ config.country.name }} <a href="javascript:popup('{% url 'applicationDelConfig' application.id config.country.codeA2 %}')">Remove</a></li>
+    <h4>Platforms
+      {% if config.applicationplatform_set.count < platforms_count %}
+        <a href="javascript:popup('{% url 'applicationAddPlatform' application.id config.id %}')">Add</a>
+      {% endif %}
+    </h4>
+    <ul>
+    {% for platform in config.applicationplatform_set.all %}
+      <li>{{ platform.platform.name }} <a href="javascript:popup('{% url 'applicationDelPlatform' application.id platform.id %}')">Remove</a></li>
+    {% empty %}
+      No platform defined
+    {% endfor %}
+    </ul>
   {% empty %}
     No ad configurations found<br/>
   {% endfor %}
+  </ul>
   <br/>
   <a href='{% url 'applicationList' %}'>Back to application list</a>
 {% endblock %}

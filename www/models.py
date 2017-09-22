@@ -37,7 +37,7 @@ class Application(models.Model):
     def __str__(self):
         return self.name
 
-# Application ad config by country
+# Application ad config (i.e. country) linked to an application
 class ApplicationAdConfig(models.Model):
     application = models.ForeignKey(Application, on_delete=models.CASCADE)
     country = models.ForeignKey(Country, on_delete=models.PROTECT)
@@ -47,4 +47,23 @@ class ApplicationAdConfig(models.Model):
     def __str__(self):
         return "%s-%s" % (self.application.name,self.country.name)
 
-# Create your models here.
+# Application Platform, linked to an application configuration
+class ApplicationPlatform(models.Model):
+    config = models.ForeignKey(ApplicationAdConfig, on_delete=models.CASCADE)
+    platform = models.ForeignKey(Platform, on_delete=models.PROTECT)
+    class Meta:
+        unique_together = ('config', 'platform')
+
+    def __str__(self):
+        return "%s-%s" % (self.config, self.platform.name)
+
+# Application ad, linked to an application platform
+class ApplicationAd(models.Model):
+    platform = models.ForeignKey(ApplicationPlatform, on_delete=models.CASCADE)
+    adType = models.ForeignKey(AdType, on_delete=models.PROTECT)
+    adPlace = models.ForeignKey(AdPlace, on_delete=models.PROTECT)
+    class Meta:
+        unique_together = ('platform', 'adType', 'adPlace')
+
+    def __str__(self):
+        return "%s-%s-%s" % (platform, adType, adPlace)

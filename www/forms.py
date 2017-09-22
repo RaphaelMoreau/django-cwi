@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import ApplicationAdConfig, Country
+from .models import ApplicationAdConfig, Country, Platform, ApplicationPlatform
 
 class ApplicationAddAdConfigForm(forms.ModelForm):
 
@@ -13,3 +13,14 @@ class ApplicationAddAdConfigForm(forms.ModelForm):
     class Meta:
         model = ApplicationAdConfig
         fields = ['country']
+
+class ApplicationAddPlatformForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.config_id = kwargs.pop('cfgId')
+        super(ApplicationAddPlatformForm, self).__init__(*args, **kwargs)
+        if self.config_id:
+            self.fields['platform'].queryset = Platform.objects.exclude(id__in=ApplicationPlatform.objects.filter(config=self.config_id).values_list('platform'))
+
+    class Meta:
+        model = ApplicationPlatform
+        fields = ['platform']

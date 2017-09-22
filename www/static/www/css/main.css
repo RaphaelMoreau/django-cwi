@@ -12,3 +12,15 @@ h1 {
   display: table;
   clear: both;
 }
+
+h4 {
+  margin: 0 0 0 1em;
+}
+
+ul {
+  margin-bottom: 1em;
+}
+
+li {
+  margin: 0;
+}

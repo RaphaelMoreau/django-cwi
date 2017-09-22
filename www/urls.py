@@ -30,6 +30,12 @@ urlpatterns = [
     url(    r'app/(?P<appId>[0-9]+)/cfg/(?P<confId>([A-Z]{2}|\*))/del$',
             views.applicationDelAdConfigurationView.as_view(),
             name='applicationDelConfig'),
+    url(    r'app/(?P<appId>[0-9]+)/cfg/(?P<cfgId>[0-9]+)/addPlatform$',
+            views.applicationAddPlatformView.as_view(),
+            name='applicationAddPlatform'),
+    url(    r'app/(?P<appId>[0-9]+)/plf/(?P<pk>[0-9]+)/del$',
+            views.applicationDelPlatformView.as_view(),
+            name='applicationDelPlatform'),
 ]
 
 if settings.DEBUG is True:
