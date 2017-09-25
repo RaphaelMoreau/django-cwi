@@ -1,5 +1,5 @@
 import csv
-from www.models import Country, AdType, AdPlace
+from www.models import Country, AdType, AdPlace, Platform
 import sys,os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
