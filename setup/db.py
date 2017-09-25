@@ -39,3 +39,15 @@ def places():
         else:
             c=AdPlace(id=p[0], name=p[1])
             c.save()
+
+def platforms():
+    print("Importing platforms")
+    file=open(os.path.join(BASE_DIR,'Platforms.csv'))
+    reader=csv.reader(file)
+    first=True
+    for p in reader:
+        if first:
+            first=False
+        else:
+            c=Platform(id=p[0], name=p[1])
+            c.save()
