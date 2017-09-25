@@ -22,6 +22,18 @@
     <ul>
     {% for platform in config.applicationplatform_set.all %}
       <li>{{ platform.platform.name }} <a href="javascript:popup('{% url 'applicationDelPlatform' application.id platform.id %}')">Remove</a></li>
+      <h5>Ads
+        {% if platform.applicationad_set.count < ads_count %}
+          <a href="javascript:popup('{% url 'applicationAddAd' application.id platform.id %}')">Add</a>
+        {% endif %}
+      </h4>
+      <ul>
+      {% for ad in platform.applicationad_set.all %}
+        <li>{{ ad.adType }} {{ ad.adPlace }} <a href="javascript:popup('{% url 'applicationDelAd' application.id ad.id %}')">Remove</a></li>
+      {% empty %}
+        No ads defined
+      {% endfor %}
+      </ul>
     {% empty %}
       No platform defined
     {% endfor %}

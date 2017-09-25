@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import ApplicationAdConfig, Country, Platform, ApplicationPlatform
+from .models import *
 
 class ApplicationAddAdConfigForm(forms.ModelForm):
 
