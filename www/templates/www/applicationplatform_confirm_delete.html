@@ -1,7 +1,7 @@
 
 <form method="post">
 {% csrf_token %}
-Are you sure you want to remove {{ object.platform.name }} from {{ object.config }} ?<br/>
+Are you sure you want to remove {{ object.platform.name }} from {{ object.country }} ?<br/>
 <input type='submit' value="Remove platform"/>
 <input type="button" onclick="window.close()" value="Cancel"/>
 </form>

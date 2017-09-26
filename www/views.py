@@ -40,7 +40,7 @@ class applicationUpdateView(LoginRequiredMixin, generic.UpdateView):
     def get_success_url(self):
         return reverse('applicationDetail',args=(self.object.id,))
 
-# Adding an ad configuration (country) to an application
+# Adding a country to an application
 from .forms import *
 
 class applicationAddCountryView(LoginRequiredMixin, generic.CreateView):
@@ -72,7 +72,7 @@ class applicationAddCountryView(LoginRequiredMixin, generic.CreateView):
         context['application'] = get_object_or_404(Application, pk=self.kwargs['pk'])
         return context
 
-# Removing an ad configuration (country) to an application
+# Removing a country from an application
 class applicationDelCountryView(LoginRequiredMixin, generic.DeleteView):
     model = ApplicationCountry
 
@@ -92,22 +92,22 @@ class applicationDelCountryView(LoginRequiredMixin, generic.DeleteView):
         context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
         return context
 
-# Adding a platform to an application config (country)
+# Adding a platform to an application country
 class applicationAddPlatformView(LoginRequiredMixin, generic.CreateView):
     model = ApplicationPlatform
     form_class = ApplicationAddPlatformForm
 
     def get_form_kwargs(self):
         kwargs = super(applicationAddPlatformView, self).get_form_kwargs()
-        kwargs['cfgId']=self.kwargs['cfgId']
+        kwargs['ctyId']=self.kwargs['ctyId']
         return kwargs
 
     def get_success_url(self):
         return '/'
 
     def form_valid(self, form):
-        config = get_object_or_404(ApplicationCountry, pk=self.kwargs['cfgId'])
-        form.instance.config = config
+        country = get_object_or_404(ApplicationCountry, pk=self.kwargs['ctyId'])
+        form.instance.country = country
         from django.core.exceptions import ValidationError
         try:
             form.instance.validate_unique()
@@ -120,10 +120,10 @@ class applicationAddPlatformView(LoginRequiredMixin, generic.CreateView):
     def get_context_data(self, **kwargs):
         context = super(applicationAddPlatformView, self).get_context_data(**kwargs)
         context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
-        context['config'] = get_object_or_404(ApplicationCountry, pk=self.kwargs['cfgId'])
+        context['country'] = get_object_or_404(ApplicationCountry, pk=self.kwargs['ctyId'])
         return context
 
-# Remove a platform from an application config (country)
+# Remove a platform from an application country
 class applicationDelPlatformView(LoginRequiredMixin, generic.DeleteView):
     model = ApplicationPlatform
 
@@ -141,7 +141,7 @@ class applicationDelPlatformView(LoginRequiredMixin, generic.DeleteView):
         context['platform'] = get_object_or_404(ApplicationPlatform, pk=self.kwargs['pk'])
         return context
 
-# Adding an ad to a platform (which is linked to a config, which is linked to an application)
+# Adding an ad to a platform (which is linked to a country, which is linked to an application)
 class applicationAddAdView(LoginRequiredMixin, generic.CreateView):
     model = ApplicationAd
     fields = [ 'adType', 'adPlace' ]

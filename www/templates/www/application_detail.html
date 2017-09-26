@@ -6,21 +6,21 @@
   Name: {{ application.name }}<br/>
   Crypto Key: {{ application.cryptoKey }}<br/>
   <br/>
-  <h3>Ad configurations
+  <h3>Countries
     {% if application.applicationcountry_set.count < countries_count %}
-      <a href="javascript:popup('{% url 'applicationAddConfig' application.id %}')">Add</a>
+      <a href="javascript:popup('{% url 'applicationAddCountry' application.id %}')">Add</a>
     {% endif %}
   </h3>
   <ul>
-  {% for config in application.applicationcountry_set.all %}
-    <li>{{ config.country.name }} <a href="javascript:popup('{% url 'applicationDelConfig' application.id config.country.codeA2 %}')">Remove</a></li>
+  {% for country in application.applicationcountry_set.all %}
+    <li>{{ country.country.name }} <a href="javascript:popup('{% url 'applicationDelCountry' application.id country.country.codeA2 %}')">Remove</a></li>
     <h4>Platforms
-      {% if config.applicationplatform_set.count < platforms_count %}
-        <a href="javascript:popup('{% url 'applicationAddPlatform' application.id config.id %}')">Add</a>
+      {% if country.applicationplatform_set.count < platforms_count %}
+        <a href="javascript:popup('{% url 'applicationAddPlatform' application.id country.id %}')">Add</a>
       {% endif %}
     </h4>
     <ul>
-    {% for platform in config.applicationplatform_set.all %}
+    {% for platform in country.applicationplatform_set.all %}
       <li>{{ platform.platform.name }} <a href="javascript:popup('{% url 'applicationDelPlatform' application.id platform.id %}')">Remove</a></li>
       <h5>Ads
         {% if platform.applicationad_set.count < ads_count %}
@@ -39,7 +39,7 @@
     {% endfor %}
     </ul>
   {% empty %}
-    No ad configurations found<br/>
+    No country found<br/>
   {% endfor %}
   </ul>
   <br/>

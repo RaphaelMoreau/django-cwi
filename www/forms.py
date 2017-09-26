@@ -16,10 +16,10 @@ class ApplicationAddCountryForm(forms.ModelForm):
 
 class ApplicationAddPlatformForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
-        self.config_id = kwargs.pop('cfgId')
+        self.country_id = kwargs.pop('ctyId')
         super(ApplicationAddPlatformForm, self).__init__(*args, **kwargs)
-        if self.config_id:
-            self.fields['platform'].queryset = Platform.objects.exclude(id__in=ApplicationPlatform.objects.filter(config=self.config_id).values_list('platform'))
+        if self.country_id:
+            self.fields['platform'].queryset = Platform.objects.exclude(id__in=ApplicationPlatform.objects.filter(country=self.country_id).values_list('platform'))
 
     class Meta:
         model = ApplicationPlatform

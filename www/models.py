@@ -47,15 +47,15 @@ class ApplicationCountry(models.Model):
     def __str__(self):
         return "%s-%s" % (self.application.name,self.country.name)
 
-# Application Platform, linked to an application configuration
+# Application Platform, linked to an application country
 class ApplicationPlatform(models.Model):
-    config = models.ForeignKey(ApplicationCountry, on_delete=models.CASCADE)
+    country = models.ForeignKey(ApplicationCountry, on_delete=models.CASCADE)
     platform = models.ForeignKey(Platform, on_delete=models.PROTECT)
     class Meta:
-        unique_together = ('config', 'platform')
+        unique_together = ('country', 'platform')
 
     def __str__(self):
-        return "%s-%s" % (self.config, self.platform.name)
+        return "%s-%s" % (self.country, self.platform.name)
 
 # Application ad, linked to an application platform
 class ApplicationAd(models.Model):
