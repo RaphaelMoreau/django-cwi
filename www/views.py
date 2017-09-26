@@ -43,12 +43,12 @@ class applicationUpdateView(LoginRequiredMixin, generic.UpdateView):
 # Adding an ad configuration (country) to an application
 from .forms import *
 
-class applicationAddAdConfigurationView(LoginRequiredMixin, generic.CreateView):
-    model = ApplicationAdConfig
-    form_class = ApplicationAddAdConfigForm
+class applicationAddCountryView(LoginRequiredMixin, generic.CreateView):
+    model = ApplicationCountry
+    form_class = ApplicationAddCountryForm
 
     def get_form_kwargs(self):
-        kwargs = super(applicationAddAdConfigurationView, self).get_form_kwargs()
+        kwargs = super(applicationAddCountryView, self).get_form_kwargs()
         kwargs['application_id'] = self.kwargs['pk']
         return kwargs
 
@@ -64,17 +64,17 @@ class applicationAddAdConfigurationView(LoginRequiredMixin, generic.CreateView):
         except ValidationError as e:
             form.add_error(None, e)
             return self.form_invalid(form)
-        response = super(applicationAddAdConfigurationView, self).form_valid(form)
+        response = super(applicationAddCountryView, self).form_valid(form)
         return HttpResponse("<script type='text/javascript'>window.close(); window.opener.location.reload();</script>")
 
     def get_context_data(self, **kwargs):
-        context = super(applicationAddAdConfigurationView, self).get_context_data(**kwargs)
+        context = super(applicationAddCountryView, self).get_context_data(**kwargs)
         context['application'] = get_object_or_404(Application, pk=self.kwargs['pk'])
         return context
 
 # Removing an ad configuration (country) to an application
-class applicationDelAdConfigurationView(LoginRequiredMixin, generic.DeleteView):
-    model = ApplicationAdConfig
+class applicationDelCountryView(LoginRequiredMixin, generic.DeleteView):
+    model = ApplicationCountry
 
     def get_success_url(self):
         return '/'
@@ -85,10 +85,10 @@ class applicationDelAdConfigurationView(LoginRequiredMixin, generic.DeleteView):
         return HttpResponse("<script type='text/javascript'>window.close(); window.opener.location.reload();</script>")
 
     def get_object(self):
-        return get_object_or_404(ApplicationAdConfig, application=self.kwargs['appId'], country=self.kwargs['confId'])
+        return get_object_or_404(ApplicationCountry, application=self.kwargs['appId'], country=self.kwargs['confId'])
 
     def get_context_data(self, **kwargs):
-        context = super(applicationDelAdConfigurationView, self).get_context_data(**kwargs)
+        context = super(applicationDelCountryView, self).get_context_data(**kwargs)
         context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
         return context
 
@@ -106,7 +106,7 @@ class applicationAddPlatformView(LoginRequiredMixin, generic.CreateView):
         return '/'
 
     def form_valid(self, form):
-        config = get_object_or_404(ApplicationAdConfig, pk=self.kwargs['cfgId'])
+        config = get_object_or_404(ApplicationCountry, pk=self.kwargs['cfgId'])
         form.instance.config = config
         from django.core.exceptions import ValidationError
         try:
@@ -120,7 +120,7 @@ class applicationAddPlatformView(LoginRequiredMixin, generic.CreateView):
     def get_context_data(self, **kwargs):
         context = super(applicationAddPlatformView, self).get_context_data(**kwargs)
         context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
-        context['config'] = get_object_or_404(ApplicationAdConfig, pk=self.kwargs['cfgId'])
+        context['config'] = get_object_or_404(ApplicationCountry, pk=self.kwargs['cfgId'])
         return context
 
 # Remove a platform from an application config (country)

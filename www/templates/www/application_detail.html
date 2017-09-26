@@ -7,12 +7,12 @@
   Crypto Key: {{ application.cryptoKey }}<br/>
   <br/>
   <h3>Ad configurations
-    {% if application.applicationadconfig_set.count < countries_count %}
+    {% if application.applicationcountry_set.count < countries_count %}
       <a href="javascript:popup('{% url 'applicationAddConfig' application.id %}')">Add</a>
     {% endif %}
   </h3>
   <ul>
-  {% for config in application.applicationadconfig_set.all %}
+  {% for config in application.applicationcountry_set.all %}
     <li>{{ config.country.name }} <a href="javascript:popup('{% url 'applicationDelConfig' application.id config.country.codeA2 %}')">Remove</a></li>
     <h4>Platforms
       {% if config.applicationplatform_set.count < platforms_count %}

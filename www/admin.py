@@ -9,7 +9,7 @@ admin.site.index_title = "CWI Administration"
 
 # Registering models
 admin.site.register(Application)
-admin.site.register(ApplicationAdConfig)
+admin.site.register(ApplicationCountry)
 admin.site.register(ApplicationPlatform)
 admin.site.register(ApplicationAd)
 admin.site.register(Country)

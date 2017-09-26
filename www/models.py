@@ -37,8 +37,8 @@ class Application(models.Model):
     def __str__(self):
         return self.name
 
-# Application ad config (i.e. country) linked to an application
-class ApplicationAdConfig(models.Model):
+# Application countries linked to an application
+class ApplicationCountry(models.Model):
     application = models.ForeignKey(Application, on_delete=models.CASCADE)
     country = models.ForeignKey(Country, on_delete=models.PROTECT)
     class Meta:
@@ -49,7 +49,7 @@ class ApplicationAdConfig(models.Model):
 
 # Application Platform, linked to an application configuration
 class ApplicationPlatform(models.Model):
-    config = models.ForeignKey(ApplicationAdConfig, on_delete=models.CASCADE)
+    config = models.ForeignKey(ApplicationCountry, on_delete=models.CASCADE)
     platform = models.ForeignKey(Platform, on_delete=models.PROTECT)
     class Meta:
         unique_together = ('config', 'platform')
