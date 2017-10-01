@@ -141,10 +141,10 @@ class applicationDelPlatformView(LoginRequiredMixin, generic.DeleteView):
         context['platform'] = get_object_or_404(ApplicationPlatform, pk=self.kwargs['pk'])
         return context
 
-# Adding an ad to a platform (which is linked to a country, which is linked to an application)
-class applicationAddAdView(LoginRequiredMixin, generic.CreateView):
-    model = ApplicationAd
-    fields = [ 'adType', 'adPlace' ]
+# Adding an ad type to an application platform (which is linked to an application country)
+class applicationAddAdTypeView(LoginRequiredMixin, generic.CreateView):
+    model = ApplicationAdType
+    fields = [ 'adType' ]
 
     def get_success_url(self):
         return '/'
@@ -158,18 +158,18 @@ class applicationAddAdView(LoginRequiredMixin, generic.CreateView):
         except ValidationError as e:
             form.add_error(None,e)
             return self.form_invalid(form)
-        response = super(applicationAddAdView, self).form_valid(form)
+        response = super(applicationAddAdTypeView, self).form_valid(form)
         return HttpResponse("<script type='text/javascript'>window.close(); window.opener.location.reload();</script>")
 
     def get_context_data(self, **kwargs):
-        context = super(applicationAddAdView, self).get_context_data(**kwargs)
+        context = super(applicationAddAdTypeView, self).get_context_data(**kwargs)
         context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
         context['platform'] = get_object_or_404(ApplicationPlatform, pk=self.kwargs['plfId'])
         return context
 
 # Remove an ad from a platform
-class applicationDelAdView(LoginRequiredMixin, generic.DeleteView):
-    model = ApplicationAd
+class applicationDelAdTypeView(LoginRequiredMixin, generic.DeleteView):
+    model = ApplicationAdType
 
     def get_success_url(self):
         return '/'
@@ -180,7 +180,7 @@ class applicationDelAdView(LoginRequiredMixin, generic.DeleteView):
         return HttpResponse("<script type='text/javascript'>window.close(); window.opener.location.reload();</script>")
 
     def get_context_data(self, **kwargs):
-        context = super(applicationDelAdView, self).get_context_data(**kwargs)
+        context = super(applicationDelAdTypeView, self).get_context_data(**kwargs)
         context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
         #context['platform'] = get_object_or_404(ApplicationPlatform, pk=self.kwargs['pk'])
         return context

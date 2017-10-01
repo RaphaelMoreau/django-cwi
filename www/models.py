@@ -57,13 +57,23 @@ class ApplicationPlatform(models.Model):
     def __str__(self):
         return "%s-%s" % (self.country, self.platform.name)
 
-# Application ad, linked to an application platform
-class ApplicationAd(models.Model):
+# Application ad type, linked to an application platform
+class ApplicationAdType(models.Model):
     platform = models.ForeignKey(ApplicationPlatform, on_delete=models.CASCADE)
     adType = models.ForeignKey(AdType, on_delete=models.PROTECT)
+    class Meta:
+        unique_together = ('platform', 'adType')
+
+    def __str__(self):
+        return "%s-%s" % (self.platform, self.adType)
+
+# application ad place, linked to an application platform and an application ad type
+class ApplicationAdPlace(models.Model):
+    platform = models.ForeignKey(ApplicationPlatform, on_delete=models.CASCADE)
+    adType = models.ForeignKey(ApplicationAdType, on_delete=models.CASCADE)
     adPlace = models.ForeignKey(AdPlace, on_delete=models.PROTECT)
     class Meta:
         unique_together = ('platform', 'adType', 'adPlace')
 
     def __str__(self):
-        return "%s-%s-%s" % (self.platform, self.adType, self.adPlace)
+        return "%s-%s-%s" % (self.application, self.adPlace, self.adType.adType)

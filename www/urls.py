@@ -36,12 +36,12 @@ urlpatterns = [
     url(    r'app/(?P<appId>[0-9]+)/plf/(?P<pk>[0-9]+)/del$',
             views.applicationDelPlatformView.as_view(),
             name='applicationDelPlatform'),
-    url(    r'app/(?P<appId>[0-9]+)/plf/(?P<plfId>[0-9]+)/addAd$',
-            views.applicationAddAdView.as_view(),
-            name='applicationAddAd'),
-    url(    r'app/(?P<appId>[0-9]+)/ad/(?P<pk>[0-9]+)/del$',
-            views.applicationDelAdView.as_view(),
-            name='applicationDelAd'),
+    url(    r'app/(?P<appId>[0-9]+)/plf/(?P<plfId>[0-9]+)/typ/add$',
+            views.applicationAddAdTypeView.as_view(),
+            name='applicationAddAdType'),
+    url(    r'app/(?P<appId>[0-9]+)/typ/(?P<pk>[0-9]+)/del$',
+            views.applicationDelAdTypeView.as_view(),
+            name='applicationDelAdType'),
 ]
 
 if settings.DEBUG is True:

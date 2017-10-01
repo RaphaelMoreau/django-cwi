@@ -22,16 +22,16 @@
     <ul>
     {% for platform in country.applicationplatform_set.all %}
       <li>{{ platform.platform.name }} <a href="javascript:popup('{% url 'applicationDelPlatform' application.id platform.id %}')">Remove</a></li>
-      <h5>Ads
-        {% if platform.applicationad_set.count < ads_count %}
-          <a href="javascript:popup('{% url 'applicationAddAd' application.id platform.id %}')">Add</a>
+      <h5>Ad types
+        {% if platform.applicationadtype_set.count < ads_count %}
+          <a href="javascript:popup('{% url 'applicationAddAdType' application.id platform.id %}')">Add</a>
         {% endif %}
       </h4>
       <ul>
-      {% for ad in platform.applicationad_set.all %}
-        <li>{{ ad.adType }} {{ ad.adPlace }} <a href="javascript:popup('{% url 'applicationDelAd' application.id ad.id %}')">Remove</a></li>
+      {% for adtype in platform.applicationadtype_set.all %}
+        <li>{{ adtype.adType }} <a href="javascript:popup('{% url 'applicationDelAdType' application.id adtype.id %}')">Remove</a></li>
       {% empty %}
-        No ads defined
+        No ad types defined
       {% endfor %}
       </ul>
     {% empty %}
