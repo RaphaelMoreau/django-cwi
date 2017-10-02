@@ -76,4 +76,4 @@ class ApplicationAdPlace(models.Model):
         unique_together = ('platform', 'adType', 'adPlace')
 
     def __str__(self):
-        return "%s-%s-%s" % (self.application, self.adPlace, self.adType.adType)
+        return "%s-%s-%s" % (self.platform, self.adPlace, self.adType.adType)
