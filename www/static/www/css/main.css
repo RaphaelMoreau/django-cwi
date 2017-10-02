@@ -24,3 +24,15 @@ ul {
 li {
   margin: 0;
 }
+
+.appadtypes {
+  display: inline-block;
+  width:40%;
+  vertical-align: top;
+}
+
+.appadplaces {
+  display: inline-block;
+  width: 40%;
+  vertical-align: top;
+}

@@ -24,3 +24,14 @@ class ApplicationAddPlatformForm(forms.ModelForm):
     class Meta:
         model = ApplicationPlatform
         fields = ['platform']
+
+class ApplicationAddAdPlaceForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.adtype_id = kwargs.pop('typId')
+        super(ApplicationAddAdPlaceForm, self).__init__(*args, **kwargs)
+        if self.adtype_id:
+            self.fields['adPlace'].queryset = AdPlace.objects.exclude(id__in=ApplicationAdPlace.objects.filter(adType=self.adtype_id).values_list('adPlace_id'))
+
+    class Meta:
+        model = ApplicationAdPlace
+        fields = ['adPlace']

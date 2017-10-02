@@ -1,0 +1,7 @@
+
+<form method="post">
+{% csrf_token %}
+Are you sure you want to remove {{ object.adPlace }}-{{ object.adType.adType }} from {{ object.platform }} ?<br/>
+<input type='submit' value="Remove Ad Place"/>
+<input type="button" onclick="window.close()" value="Cancel"/>
+</form>

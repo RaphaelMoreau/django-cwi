@@ -22,18 +22,35 @@
     <ul>
     {% for platform in country.applicationplatform_set.all %}
       <li>{{ platform.platform.name }} <a href="javascript:popup('{% url 'applicationDelPlatform' application.id platform.id %}')">Remove</a></li>
-      <h5>Ad types
-        {% if platform.applicationadtype_set.count < ads_count %}
-          <a href="javascript:popup('{% url 'applicationAddAdType' application.id platform.id %}')">Add</a>
-        {% endif %}
-      </h4>
-      <ul>
-      {% for adtype in platform.applicationadtype_set.all %}
-        <li>{{ adtype.adType }} <a href="javascript:popup('{% url 'applicationDelAdType' application.id adtype.id %}')">Remove</a></li>
-      {% empty %}
-        No ad types defined
-      {% endfor %}
-      </ul>
+      <div class="appadtypes">
+        <h5>Ad types
+          {% if platform.applicationadtype_set.count < ads_count %}
+            <a href="javascript:popup('{% url 'applicationAddAdType' application.id platform.id %}')">Add</a>
+          {% endif %}
+        </h5>
+        <ul>
+        {% for adtype in platform.applicationadtype_set.all %}
+          <li>{{ adtype.adType }}
+              <a href="javascript:popup('{% url 'applicationDelAdType' application.id adtype.id %}')">Remove</a>
+              {% if adtype.applicationadplace_set.count < adplaces_count %}
+                <a href="javascript:popup('{% url 'applicationAddAdPlace' application.id adtype.id %}')">Add a {{ adtype.adType }} ad place</a>
+              {% endif %}
+          </li>
+        {% empty %}
+          No ad types defined
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="appadplaces">
+        <h5>Ad places</h5>
+        <ul>
+          {% for adplace in platform.applicationadplace_set.all %}
+            <li>{{ adplace.adPlace }}/{{ adplace.adType.adType }} <a href="javascript:popup('{% url 'applicationDelAdPlace' application.id adplace.id %}')">Remove</a></li>
+          {% empty %}
+            No ad places defined
+          {% endfor %}
+        </ul>
+      </div>
     {% empty %}
       No platform defined
     {% endfor %}

@@ -1,0 +1,7 @@
+<h2>Choose ad place of type {{ adtype.adType }} to add to {{ adtype.platform }}</h2>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value="Create Ad"/>
+<input type="button" onclick="window.close()" value="Cancel"/>
+</form>
