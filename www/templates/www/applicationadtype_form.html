@@ -1,7 +1,7 @@
-<h2>Choose ad type and place to add to {{ platform }}</h2>
+<h2>Choose ad type to add to {{ platform }}</h2>
 <form method="post">
 {% csrf_token %}
 {{ form.as_p }}
-<input type='submit' value="Create Ad"/>
+<input type='submit' value="Create Ad type"/>
 <input type="button" onclick="window.close()" value="Cancel"/>
 </form>

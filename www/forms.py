@@ -19,18 +19,29 @@ class ApplicationAddPlatformForm(forms.ModelForm):
         self.country_id = kwargs.pop('ctyId')
         super(ApplicationAddPlatformForm, self).__init__(*args, **kwargs)
         if self.country_id:
-            self.fields['platform'].queryset = Platform.objects.exclude(id__in=ApplicationPlatform.objects.filter(country=self.country_id).values_list('platform'))
+            self.fields['platform'].queryset = Platform.objects.exclude(id__in=ApplicationPlatform.objects.filter(country=self.country_id).values('platform'))
 
     class Meta:
         model = ApplicationPlatform
         fields = ['platform']
+
+class ApplicationAddAdTypeForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.platform_id = kwargs.pop('plfId')
+        super(ApplicationAddAdTypeForm, self).__init__(*args, **kwargs)
+        if self.platform_id:
+            self.fields['adType'].queryset = AdType.objects.exclude(id__in=ApplicationAdType.objects.filter(platform=self.platform_id).values('adType'))
+
+    class Meta:
+        model = ApplicationAdType
+        fields = ['adType']
 
 class ApplicationAddAdPlaceForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.adtype_id = kwargs.pop('typId')
         super(ApplicationAddAdPlaceForm, self).__init__(*args, **kwargs)
         if self.adtype_id:
-            self.fields['adPlace'].queryset = AdPlace.objects.exclude(id__in=ApplicationAdPlace.objects.filter(adType=self.adtype_id).values_list('adPlace_id'))
+            self.fields['adPlace'].queryset = AdPlace.objects.exclude(id__in=ApplicationAdPlace.objects.filter(adType=self.adtype_id).values('adPlace'))
 
     class Meta:
         model = ApplicationAdPlace

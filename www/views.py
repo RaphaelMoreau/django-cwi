@@ -145,10 +145,15 @@ class applicationDelPlatformView(LoginRequiredMixin, generic.DeleteView):
 # Adding an ad type to an application platform (which is linked to an application country)
 class applicationAddAdTypeView(LoginRequiredMixin, generic.CreateView):
     model = ApplicationAdType
-    fields = [ 'adType' ]
+    form_class = ApplicationAddAdTypeForm
 
     def get_success_url(self):
         return '/'
+
+    def get_form_kwargs(self):
+        kwargs = super(applicationAddAdTypeView, self).get_form_kwargs()
+        kwargs['plfId']=self.kwargs['plfId']
+        return kwargs
 
     def form_valid(self, form):
         platform = get_object_or_404(ApplicationPlatform, pk=self.kwargs['plfId'])
