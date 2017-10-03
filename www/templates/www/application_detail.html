@@ -24,7 +24,7 @@
       <li>{{ platform.platform.name }} <a href="javascript:popup('{% url 'applicationDelPlatform' application.id platform.id %}')">Remove</a></li>
       <div class="appadtypes">
         <h5>Ad types
-          {% if platform.applicationadtype_set.count < ads_count %}
+          {% if platform.applicationadtype_set.count < adtypes_count %}
             <a href="javascript:popup('{% url 'applicationAddAdType' application.id platform.id %}')">Add</a>
           {% endif %}
         </h5>

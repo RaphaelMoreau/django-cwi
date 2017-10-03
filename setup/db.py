@@ -4,6 +4,12 @@ import sys,os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+def all():
+    countries()
+    types()
+    places()
+    platforms()
+
 def countries():
     print("Importing country codes")
     file=open(os.path.join(BASE_DIR,'CountryCodes.csv'))
