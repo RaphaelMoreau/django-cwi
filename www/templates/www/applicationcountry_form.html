@@ -1,7 +1,7 @@
 <h2>Choose country to add to {{ application }}</h2>
 <form method="post">
 {% csrf_token %}
-{{ form.as_p }}
+{{ form }}
 <input type='submit' value="Add country"/>
 <input type="button" onclick="window.close()" value="Cancel"/>
 </form>
