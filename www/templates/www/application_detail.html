@@ -35,6 +35,14 @@
               {% if adtype.applicationadplace_set.count < adplaces_count %}
                 <a href="javascript:popup('{% url 'applicationAddAdPlace' application.id adtype.id %}')">Add a {{ adtype.adType }} ad place</a>
               {% endif %}
+              <div class="adtype_parameters">
+                {% for p in adtype.parameters %}
+                  {% if p.mandatory or p.value %}
+                    {{ p.name }}={{ p.effective_value }}
+                  {% endif %}
+                {% endfor %}
+                <a href="javascript:popup('{% url 'applicationAdTypeParameters' application.id adtype.id %}')">Edit Parameters</a>
+              </div>
           </li>
         {% empty %}
           No ad types defined
