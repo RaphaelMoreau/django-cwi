@@ -58,10 +58,14 @@ urlpatterns = [
     url(    r'app/(?P<appId>[0-9]+)/typ/(?P<typId>[0-9]+)/plc/add$',
             views.applicationAddAdPlaceView.as_view(),
             name='applicationAddAdPlace'),
-    # remove an ad place from a give application platform and ad type
+    # remove an ad place from a given application platform and ad type
     url(    r'app/(?P<appId>[0-9]+)/plc/(?P<pk>[0-9]+)/del$',
             views.applicationDelAdPlaceView.as_view(),
             name='applicationDelAdPlace'),
+    # display and modify an application ad type parameters
+    url(    r'app/(?P<appId>[0-9]+)/typ/(?P<typId>[0-9]+)/params',
+            views.applicationAdTypeParametersView.as_view(),
+            name='applicationAdTypeParameters'),
 ]
 
 if settings.DEBUG is True:

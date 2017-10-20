@@ -2,8 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
+from django.contrib import messages
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -239,3 +238,31 @@ class applicationDelAdPlaceView(LoginRequiredMixin, generic.DeleteView):
         context = super(applicationDelAdPlaceView, self).get_context_data(**kwargs)
         context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
         return context
+
+# View and modify an application ad type parameters
+class applicationAdTypeParametersView(LoginRequiredMixin, generic.edit.FormView):
+    template_name = 'www/applicationadtypeparameters.html'
+    form_class = ParametersForm
+
+    def get_success_url(self):
+        return self.request.get_full_path()
+
+    def get_form_kwargs(self):
+        kwargs = super(applicationAdTypeParametersView, self).get_form_kwargs()
+        kwargs['parameters'] = get_object_or_404(ApplicationAdType, pk=self.kwargs['typId']).parameters()
+        return kwargs
+
+    def get_context_data(self, **kwargs):
+        context = super(applicationAdTypeParametersView, self).get_context_data(**kwargs)
+        context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
+        context['adtype'] = get_object_or_404(ApplicationAdType, pk=self.kwargs['typId'])
+        context['params'] = context['adtype'].parameters()
+        return context
+
+    def form_valid(self, form):
+        applicationAdType = get_object_or_404(ApplicationAdType, pk=self.kwargs['typId'])
+        success = False
+        for p in form.parameters:
+            success |= p.store(form.cleaned_data.get('param_%s' % p.id,None), applicationAdType)
+        messages.success(self.request, "Changes saved succesfully" if success else "No modifications")
+        return super(applicationAdTypeParametersView, self).form_valid(form)

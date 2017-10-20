@@ -36,3 +36,7 @@ li {
   width: 40%;
   vertical-align: top;
 }
+
+.hidden_param {
+  display: none;
+}
