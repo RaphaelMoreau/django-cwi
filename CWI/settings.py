@@ -130,3 +130,23 @@ LOGIN_REDIRECT_URL = '/'
 
 # where to redirect after logout
 LOGOUT_REDIRECT_VIEW = '/'
+
+try:
+    import CWI.local_settings as local_settings
+except ImportError:
+    print("No local_settings defined")
+else:
+    # Import any symbols that begin with A-Z. Append to lists any symbols that
+    # begin with "EXTRA_".
+    import re
+    for attr in dir(local_settings):
+        match = re.search('^EXTRA_(\w+)', attr)
+        if match:
+            name = match.group(1)
+            value = getattr(local_settings, attr)
+            try:
+                globals()[name] += value
+            except KeyError:
+                globals()[name] = value
+        elif re.search('^[A-Z]', attr):
+            globals()[attr] = getattr(local_settings, attr)
