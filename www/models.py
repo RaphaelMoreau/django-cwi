@@ -120,33 +120,24 @@ class Parameter(models.Model):
             return self.convert(self.value[0].value if self.value else self.default)
         return self.convert(self.value[0].value if self.value else self.default)
 
-    class Meta:
-        abstract = True
-
-# Ad types parameters
-class AdTypeParameter(Parameter):
-    adType = models.ForeignKey(AdType, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return "%s-%s" % (self.adType, self.name)
-
-    def _Update(self, value, applicationAdType):
+    def _Update(self, value, parent):
         self.value[0].value = value
         self.value[0].save()
         return True
 
-    def _Create(self, value, applicationAdType):
-        p = ApplicationAdTypeParameter.objects.create(applicationAdType=applicationAdType, parameter=self, value=value)
+    def _Create(self, value, parent):
+        kw = { self.parent_name: parent }
+        p = ApplicationAdTypeParameter.objects.create(parameter=self, value=value, **kw)
         return True
 
-    def _Remove(self, value, applicationAdType):
+    def _Remove(self, value, parent):
         self.value[0].delete()
         return True
 
-    def _Ignore(self, value, applicationAdType):
+    def _Ignore(self, value, parent):
         return False
 
-    def store(self, value, applicationAdType):
+    def store(self, value, parent):
         'Save value for parameter. Return True if changed, False otherwise'
         # the actions to perform depending on various conditions
         _actions = {
@@ -199,8 +190,18 @@ class AdTypeParameter(Parameter):
         else: # all other cases, i.e. provided value is different of default and different of stored value (if it exists)
             s += 'O'
         # Perform the action and return its value
-        return _actions[s](value, applicationAdType)
+        return _actions[s](value, parent)
 
+    class Meta:
+        abstract = True
+
+# Ad types parameters
+class AdTypeParameter(Parameter):
+    adType = models.ForeignKey(AdType, on_delete=models.PROTECT)
+    parent_name = 'applicationAdType'
+
+    def __str__(self):
+        return "%s-%s" % (self.adType, self.name)
 
 class ApplicationAdTypeParameter(models.Model):
     applicationAdType = models.ForeignKey(ApplicationAdType)
