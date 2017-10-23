@@ -66,6 +66,10 @@ urlpatterns = [
     url(    r'app/(?P<appId>[0-9]+)/typ/(?P<typId>[0-9]+)/params',
             views.applicationAdTypeParametersView.as_view(),
             name='applicationAdTypeParameters'),
+    # display and modify an application ad place parameters
+    url(    r'app/(?P<appId>[0-9]+)/plc/(?P<plcId>[0-9]+)/params',
+            views.applicationAdPlaceParametersView.as_view(),
+            name='applicationAdPlaceParameters'),
 ]
 
 if settings.DEBUG is True:

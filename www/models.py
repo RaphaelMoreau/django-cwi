@@ -82,6 +82,10 @@ class ApplicationAdPlace(models.Model):
     def __str__(self):
         return "%s-%s-%s" % (self.platform, self.adPlace, self.adType.adType)
 
+    def parameters(self):
+        p = ApplicationAdPlaceParameter.objects.filter(applicationAdPlace=self.id)
+        return AdPlaceParameter.objects.filter(adPlace=self.adPlace).prefetch_related(models.Prefetch("applicationadplaceparameter_set", queryset=p, to_attr='value'))
+
 #utility str to bool conversion function - private
 def _str_to_bool(value):
     return value == 'True'
@@ -127,7 +131,7 @@ class Parameter(models.Model):
 
     def _Create(self, value, parent):
         kw = { self.parent_name: parent }
-        p = ApplicationAdTypeParameter.objects.create(parameter=self, value=value, **kw)
+        p = self.child_class.objects.create(parameter=self, value=value, **kw)
         return True
 
     def _Remove(self, value, parent):
@@ -196,17 +200,35 @@ class Parameter(models.Model):
         abstract = True
 
 # Ad types parameters
-class AdTypeParameter(Parameter):
-    adType = models.ForeignKey(AdType, on_delete=models.PROTECT)
-    parent_name = 'applicationAdType'
-
-    def __str__(self):
-        return "%s-%s" % (self.adType, self.name)
-
 class ApplicationAdTypeParameter(models.Model):
     applicationAdType = models.ForeignKey(ApplicationAdType)
-    parameter = models.ForeignKey(AdTypeParameter)
+    parameter = models.ForeignKey('AdTypeParameter') #Do not forget to put class name with quotes because of the circular reference
     value = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return "%s-%s" % (self.applicationAdType, self.parameter)
+
+class AdTypeParameter(Parameter):
+    adType = models.ForeignKey(AdType, on_delete=models.PROTECT)
+    parent_name = 'applicationAdType'
+    child_class = ApplicationAdTypeParameter
+
+    def __str__(self):
+        return "%s-%s" % (self.adType, self.name)
+
+# Ad places parameters
+class ApplicationAdPlaceParameter(models.Model):
+    applicationAdPlace = models.ForeignKey(ApplicationAdPlace)
+    parameter = models.ForeignKey('AdPlaceParameter') #Do not forget to put class name with quotes because of the circular reference
+    value = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return "%s-%s" % (self.applicationAdPlace, self.parameter)
+
+class AdPlaceParameter(Parameter):
+    adPlace = models.ForeignKey(AdPlace, on_delete=models.PROTECT)
+    parent_name = 'applicationAdPlace'
+    child_class = ApplicationAdPlaceParameter
+
+    def __str__(self):
+        return "%s-%s" % (self.adPlace, self.name)

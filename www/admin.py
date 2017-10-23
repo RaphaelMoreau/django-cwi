@@ -13,6 +13,7 @@ admin.site.register(Platform)
 admin.site.register(AdType)
 admin.site.register(AdTypeParameter)
 admin.site.register(AdPlace)
+admin.site.register(AdPlaceParameter)
 
 # Registering models
 admin.site.register(Application)
@@ -21,3 +22,4 @@ admin.site.register(ApplicationPlatform)
 admin.site.register(ApplicationAdType)
 admin.site.register(ApplicationAdTypeParameter)
 admin.site.register(ApplicationAdPlace)
+admin.site.register(ApplicationAdPlaceParameter)

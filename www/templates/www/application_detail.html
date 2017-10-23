@@ -35,14 +35,16 @@
               {% if adtype.applicationadplace_set.count < adplaces_count %}
                 <a href="javascript:popup('{% url 'applicationAddAdPlace' application.id adtype.id %}')">Add a {{ adtype.adType }} ad place</a>
               {% endif %}
-              <div class="adtype_parameters">
-                {% for p in adtype.parameters %}
-                  {% if p.mandatory or p.value %}
-                    {{ p.name }}={{ p.effective_value }}
-                  {% endif %}
-                {% endfor %}
-                <a href="javascript:popup('{% url 'applicationAdTypeParameters' application.id adtype.id %}',600,600)">Edit Parameters</a>
-              </div>
+              {% if adtype.parameters.count > 0 %}
+                <div class="adtype_parameters">
+                  {% for p in adtype.parameters %}
+                    {% if p.mandatory or p.value %}
+                      {{ p.name }}={{ p.effective_value }}
+                    {% endif %}
+                  {% endfor %}
+                  <a href="javascript:popup('{% url 'applicationAdTypeParameters' application.id adtype.id %}',600,600)">Edit Parameters</a>
+                </div>
+              {% endif %}
           </li>
         {% empty %}
           No ad types defined
@@ -53,7 +55,20 @@
         <h5>Ad places</h5>
         <ul>
           {% for adplace in platform.applicationadplace_set.all %}
-            <li>{{ adplace.adPlace }}/{{ adplace.adType.adType }} <a href="javascript:popup('{% url 'applicationDelAdPlace' application.id adplace.id %}')">Remove</a></li>
+            <li>
+              {{ adplace.adPlace }}/{{ adplace.adType.adType }}
+              <a href="javascript:popup('{% url 'applicationDelAdPlace' application.id adplace.id %}')">Remove</a>
+              {% if adplace.parameters.count > 0 %}
+                <div class="adplace_parameters">
+                  {% for p in adplace.parameters %}
+                    {% if p.mandatory or p.value %}
+                      {{ p.name }}={{ p.effective_value }}
+                    {% endif %}
+                  {% endfor %}
+                  <a href="javascript:popup('{% url 'applicationAdPlaceParameters' application.id adplace.id %}',600,600)">Edit Parameters</a>
+                </div>
+              {% endif %}
+            </li>
           {% empty %}
             No ad places defined
           {% endfor %}
