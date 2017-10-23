@@ -96,17 +96,20 @@ class Parameter(models.Model):
     STRING = 2
     BOOLEAN = 3
     PERCENTAGE = 4
+    FLOAT = 5
     TYPES_CHOICES = (
         (INTEGER, 'Integer'),
         (STRING, 'String'),
         (BOOLEAN, 'Boolean'),
-        (PERCENTAGE, 'Percentage')
+        (PERCENTAGE, 'Percentage'),
+        (FLOAT, 'Float'),
     )
     CONVERSIONS={
         INTEGER: ('Integer', int),
         STRING: ('String', str),
         BOOLEAN: ('Boolean', _str_to_bool),
         PERCENTAGE: ('Percentage', int),
+        FLOAT: ('Float', float),
     }
     name = models.CharField(max_length=45)
     type = models.IntegerField(choices=TYPES_CHOICES, default=INTEGER)
