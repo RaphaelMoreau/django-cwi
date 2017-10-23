@@ -1,4 +1,5 @@
 from django.db import models
+from decimal import *
 
 #Reference tables
 class Country(models.Model):
@@ -109,7 +110,7 @@ class Parameter(models.Model):
         STRING: ('String', str),
         BOOLEAN: ('Boolean', _str_to_bool),
         PERCENTAGE: ('Percentage', int),
-        FLOAT: ('Float', float),
+        FLOAT: ('Float', Decimal),
     }
     name = models.CharField(max_length=45)
     type = models.IntegerField(choices=TYPES_CHOICES, default=INTEGER)

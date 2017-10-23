@@ -106,8 +106,8 @@ class ParametersForm(forms.Form):
             field=forms.IntegerField(min_value=0, max_value=100, **attrs)
             cls = 'param_percentage'
         elif param.type == Parameter.FLOAT:
-            field=forms.FloatField(**attrs)
-            cls = 'param_percentage'
+            field=forms.DecimalField(max_digits=5, decimal_places=2, localize=False, **attrs)
+            cls = 'param_float'
         elif param.type == Parameter.BOOLEAN:
             field=forms.BooleanField(**attrs)
             cls = 'param_boolean'
