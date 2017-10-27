@@ -1,0 +1,2500 @@
+[
+{
+    "model": "www.country",
+    "pk": "*",
+    "fields": {
+        "codeA3": "*",
+        "name": "Default",
+        "display": true
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AD",
+    "fields": {
+        "codeA3": "AND",
+        "name": "Andorra",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AE",
+    "fields": {
+        "codeA3": "ARE",
+        "name": "United Arab Emirates",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AF",
+    "fields": {
+        "codeA3": "AFG",
+        "name": "Afghanistan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AG",
+    "fields": {
+        "codeA3": "ATG",
+        "name": "Antigua and Barbuda",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AI",
+    "fields": {
+        "codeA3": "AIA",
+        "name": "Anguilla",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AL",
+    "fields": {
+        "codeA3": "ALB",
+        "name": "Albania",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AM",
+    "fields": {
+        "codeA3": "ARM",
+        "name": "Armenia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AN",
+    "fields": {
+        "codeA3": "ANT",
+        "name": "Netherlands Antilles",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AO",
+    "fields": {
+        "codeA3": "AGO",
+        "name": "Angola",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AQ",
+    "fields": {
+        "codeA3": "ATA",
+        "name": "Antarctica",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AR",
+    "fields": {
+        "codeA3": "ARG",
+        "name": "Argentina",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AS",
+    "fields": {
+        "codeA3": "ASM",
+        "name": "American Samoa",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AT",
+    "fields": {
+        "codeA3": "AUT",
+        "name": "Austria",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AU",
+    "fields": {
+        "codeA3": "AUS",
+        "name": "Australia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AW",
+    "fields": {
+        "codeA3": "ABW",
+        "name": "Aruba",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AX",
+    "fields": {
+        "codeA3": "ALA",
+        "name": "Aland Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "AZ",
+    "fields": {
+        "codeA3": "AZE",
+        "name": "Azerbaijan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BA",
+    "fields": {
+        "codeA3": "BIH",
+        "name": "Bosnia and Herzegovina",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BB",
+    "fields": {
+        "codeA3": "BRB",
+        "name": "Barbados",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BD",
+    "fields": {
+        "codeA3": "BGD",
+        "name": "Bangladesh",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BE",
+    "fields": {
+        "codeA3": "BEL",
+        "name": "Belgium",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BF",
+    "fields": {
+        "codeA3": "BFA",
+        "name": "Burkina Faso",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BG",
+    "fields": {
+        "codeA3": "BGR",
+        "name": "Bulgaria",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BH",
+    "fields": {
+        "codeA3": "BHR",
+        "name": "Bahrain",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BI",
+    "fields": {
+        "codeA3": "BDI",
+        "name": "Burundi",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BJ",
+    "fields": {
+        "codeA3": "BEN",
+        "name": "Benin",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BL",
+    "fields": {
+        "codeA3": "BLM",
+        "name": "Saint-Barth\u00c3\u00a9lemy",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BM",
+    "fields": {
+        "codeA3": "BMU",
+        "name": "Bermuda",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BN",
+    "fields": {
+        "codeA3": "BRN",
+        "name": "Brunei Darussalam",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BO",
+    "fields": {
+        "codeA3": "BOL",
+        "name": "Bolivia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BR",
+    "fields": {
+        "codeA3": "BRA",
+        "name": "Brazil",
+        "display": true
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BS",
+    "fields": {
+        "codeA3": "BHS",
+        "name": "Bahamas",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BT",
+    "fields": {
+        "codeA3": "BTN",
+        "name": "Bhutan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BV",
+    "fields": {
+        "codeA3": "BVT",
+        "name": "Bouvet Island",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BW",
+    "fields": {
+        "codeA3": "BWA",
+        "name": "Botswana",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BY",
+    "fields": {
+        "codeA3": "BLR",
+        "name": "Belarus",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "BZ",
+    "fields": {
+        "codeA3": "BLZ",
+        "name": "Belize",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CA",
+    "fields": {
+        "codeA3": "CAN",
+        "name": "Canada",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CC",
+    "fields": {
+        "codeA3": "CCK",
+        "name": "Cocos (Keeling) Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CD",
+    "fields": {
+        "codeA3": "COD",
+        "name": "Congo, (Kinshasa)",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CF",
+    "fields": {
+        "codeA3": "CAF",
+        "name": "Central African Republic",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CG",
+    "fields": {
+        "codeA3": "COG",
+        "name": "Congo\u00c2\u00a0(Brazzaville)",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CH",
+    "fields": {
+        "codeA3": "CHE",
+        "name": "Switzerland",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CI",
+    "fields": {
+        "codeA3": "CIV",
+        "name": "C\u00c3\u00b4te d'Ivoire",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CK",
+    "fields": {
+        "codeA3": "COK",
+        "name": "Cook Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CL",
+    "fields": {
+        "codeA3": "CHL",
+        "name": "Chile",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CM",
+    "fields": {
+        "codeA3": "CMR",
+        "name": "Cameroon",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CN",
+    "fields": {
+        "codeA3": "CHN",
+        "name": "China",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CO",
+    "fields": {
+        "codeA3": "COL",
+        "name": "Colombia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CR",
+    "fields": {
+        "codeA3": "CRI",
+        "name": "Costa Rica",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CU",
+    "fields": {
+        "codeA3": "CUB",
+        "name": "Cuba",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CV",
+    "fields": {
+        "codeA3": "CPV",
+        "name": "Cape Verde",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CX",
+    "fields": {
+        "codeA3": "CXR",
+        "name": "Christmas Island",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CY",
+    "fields": {
+        "codeA3": "CYP",
+        "name": "Cyprus",
+        "display": true
+    }
+},
+{
+    "model": "www.country",
+    "pk": "CZ",
+    "fields": {
+        "codeA3": "CZE",
+        "name": "Czech Republic",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "DE",
+    "fields": {
+        "codeA3": "DEU",
+        "name": "Germany",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "DJ",
+    "fields": {
+        "codeA3": "DJI",
+        "name": "Djibouti",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "DK",
+    "fields": {
+        "codeA3": "DNK",
+        "name": "Denmark",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "DM",
+    "fields": {
+        "codeA3": "DMA",
+        "name": "Dominica",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "DO",
+    "fields": {
+        "codeA3": "DOM",
+        "name": "Dominican Republic",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "DZ",
+    "fields": {
+        "codeA3": "DZA",
+        "name": "Algeria",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "EC",
+    "fields": {
+        "codeA3": "ECU",
+        "name": "Ecuador",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "EE",
+    "fields": {
+        "codeA3": "EST",
+        "name": "Estonia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "EG",
+    "fields": {
+        "codeA3": "EGY",
+        "name": "Egypt",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "EH",
+    "fields": {
+        "codeA3": "ESH",
+        "name": "Western Sahara",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "ER",
+    "fields": {
+        "codeA3": "ERI",
+        "name": "Eritrea",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "ES",
+    "fields": {
+        "codeA3": "ESP",
+        "name": "Spain",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "ET",
+    "fields": {
+        "codeA3": "ETH",
+        "name": "Ethiopia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "FI",
+    "fields": {
+        "codeA3": "FIN",
+        "name": "Finland",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "FJ",
+    "fields": {
+        "codeA3": "FJI",
+        "name": "Fiji",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "FK",
+    "fields": {
+        "codeA3": "FLK",
+        "name": "Falkland Islands (Malvinas)",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "FM",
+    "fields": {
+        "codeA3": "FSM",
+        "name": "Micronesia, Federated States of",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "FO",
+    "fields": {
+        "codeA3": "FRO",
+        "name": "Faroe Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "FR",
+    "fields": {
+        "codeA3": "FRA",
+        "name": "France",
+        "display": true
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GA",
+    "fields": {
+        "codeA3": "GAB",
+        "name": "Gabon",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GB",
+    "fields": {
+        "codeA3": "GBR",
+        "name": "United Kingdom",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GD",
+    "fields": {
+        "codeA3": "GRD",
+        "name": "Grenada",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GE",
+    "fields": {
+        "codeA3": "GEO",
+        "name": "Georgia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GF",
+    "fields": {
+        "codeA3": "GUF",
+        "name": "French Guiana",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GG",
+    "fields": {
+        "codeA3": "GGY",
+        "name": "Guernsey",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GH",
+    "fields": {
+        "codeA3": "GHA",
+        "name": "Ghana",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GI",
+    "fields": {
+        "codeA3": "GIB",
+        "name": "Gibraltar",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GL",
+    "fields": {
+        "codeA3": "GRL",
+        "name": "Greenland",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GM",
+    "fields": {
+        "codeA3": "GMB",
+        "name": "Gambia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GN",
+    "fields": {
+        "codeA3": "GIN",
+        "name": "Guinea",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GP",
+    "fields": {
+        "codeA3": "GLP",
+        "name": "Guadeloupe",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GQ",
+    "fields": {
+        "codeA3": "GNQ",
+        "name": "Equatorial Guinea",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GR",
+    "fields": {
+        "codeA3": "GRC",
+        "name": "Greece",
+        "display": true
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GS",
+    "fields": {
+        "codeA3": "SGS",
+        "name": "South Georgia and the South Sandwich Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GT",
+    "fields": {
+        "codeA3": "GTM",
+        "name": "Guatemala",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GU",
+    "fields": {
+        "codeA3": "GUM",
+        "name": "Guam",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GW",
+    "fields": {
+        "codeA3": "GNB",
+        "name": "Guinea-Bissau",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "GY",
+    "fields": {
+        "codeA3": "GUY",
+        "name": "Guyana",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "HK",
+    "fields": {
+        "codeA3": "HKG",
+        "name": "Hong Kong, SAR China",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "HM",
+    "fields": {
+        "codeA3": "HMD",
+        "name": "Heard and Mcdonald Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "HN",
+    "fields": {
+        "codeA3": "HND",
+        "name": "Honduras",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "HR",
+    "fields": {
+        "codeA3": "HRV",
+        "name": "Croatia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "HT",
+    "fields": {
+        "codeA3": "HTI",
+        "name": "Haiti",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "HU",
+    "fields": {
+        "codeA3": "HUN",
+        "name": "Hungary",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "ID",
+    "fields": {
+        "codeA3": "IDN",
+        "name": "Indonesia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "IE",
+    "fields": {
+        "codeA3": "IRL",
+        "name": "Ireland",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "IL",
+    "fields": {
+        "codeA3": "ISR",
+        "name": "Israel",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "IM",
+    "fields": {
+        "codeA3": "IMN",
+        "name": "Isle of Man",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "IN",
+    "fields": {
+        "codeA3": "IND",
+        "name": "India",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "IO",
+    "fields": {
+        "codeA3": "IOT",
+        "name": "British Indian Ocean Territory",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "IQ",
+    "fields": {
+        "codeA3": "IRQ",
+        "name": "Iraq",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "IR",
+    "fields": {
+        "codeA3": "IRN",
+        "name": "Iran, Islamic Republic of",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "IS",
+    "fields": {
+        "codeA3": "ISL",
+        "name": "Iceland",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "IT",
+    "fields": {
+        "codeA3": "ITA",
+        "name": "Italy",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "JE",
+    "fields": {
+        "codeA3": "JEY",
+        "name": "Jersey",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "JM",
+    "fields": {
+        "codeA3": "JAM",
+        "name": "Jamaica",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "JO",
+    "fields": {
+        "codeA3": "JOR",
+        "name": "Jordan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "JP",
+    "fields": {
+        "codeA3": "JPN",
+        "name": "Japan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KE",
+    "fields": {
+        "codeA3": "KEN",
+        "name": "Kenya",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KG",
+    "fields": {
+        "codeA3": "KGZ",
+        "name": "Kyrgyzstan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KH",
+    "fields": {
+        "codeA3": "KHM",
+        "name": "Cambodia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KI",
+    "fields": {
+        "codeA3": "KIR",
+        "name": "Kiribati",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KM",
+    "fields": {
+        "codeA3": "COM",
+        "name": "Comoros",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KN",
+    "fields": {
+        "codeA3": "KNA",
+        "name": "Saint Kitts and Nevis",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KP",
+    "fields": {
+        "codeA3": "PRK",
+        "name": "Korea\u00c2\u00a0(North)",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KR",
+    "fields": {
+        "codeA3": "KOR",
+        "name": "Korea\u00c2\u00a0(South)",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KW",
+    "fields": {
+        "codeA3": "KWT",
+        "name": "Kuwait",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KY",
+    "fields": {
+        "codeA3": "CYM",
+        "name": "Cayman Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "KZ",
+    "fields": {
+        "codeA3": "KAZ",
+        "name": "Kazakhstan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LA",
+    "fields": {
+        "codeA3": "LAO",
+        "name": "Lao PDR",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LB",
+    "fields": {
+        "codeA3": "LBN",
+        "name": "Lebanon",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LC",
+    "fields": {
+        "codeA3": "LCA",
+        "name": "Saint Lucia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LI",
+    "fields": {
+        "codeA3": "LIE",
+        "name": "Liechtenstein",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LK",
+    "fields": {
+        "codeA3": "LKA",
+        "name": "Sri Lanka",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LR",
+    "fields": {
+        "codeA3": "LBR",
+        "name": "Liberia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LS",
+    "fields": {
+        "codeA3": "LSO",
+        "name": "Lesotho",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LT",
+    "fields": {
+        "codeA3": "LTU",
+        "name": "Lithuania",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LU",
+    "fields": {
+        "codeA3": "LUX",
+        "name": "Luxembourg",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LV",
+    "fields": {
+        "codeA3": "LVA",
+        "name": "Latvia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "LY",
+    "fields": {
+        "codeA3": "LBY",
+        "name": "Libya",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MA",
+    "fields": {
+        "codeA3": "MAR",
+        "name": "Morocco",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MC",
+    "fields": {
+        "codeA3": "MCO",
+        "name": "Monaco",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MD",
+    "fields": {
+        "codeA3": "MDA",
+        "name": "Moldova",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "ME",
+    "fields": {
+        "codeA3": "MNE",
+        "name": "Montenegro",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MF",
+    "fields": {
+        "codeA3": "MAF",
+        "name": "Saint-Martin (French part)",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MG",
+    "fields": {
+        "codeA3": "MDG",
+        "name": "Madagascar",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MH",
+    "fields": {
+        "codeA3": "MHL",
+        "name": "Marshall Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MK",
+    "fields": {
+        "codeA3": "MKD",
+        "name": "Macedonia, Republic of",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "ML",
+    "fields": {
+        "codeA3": "MLI",
+        "name": "Mali",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MM",
+    "fields": {
+        "codeA3": "MMR",
+        "name": "Myanmar",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MN",
+    "fields": {
+        "codeA3": "MNG",
+        "name": "Mongolia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MO",
+    "fields": {
+        "codeA3": "MAC",
+        "name": "Macao, SAR China",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MP",
+    "fields": {
+        "codeA3": "MNP",
+        "name": "Northern Mariana Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MQ",
+    "fields": {
+        "codeA3": "MTQ",
+        "name": "Martinique",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MR",
+    "fields": {
+        "codeA3": "MRT",
+        "name": "Mauritania",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MS",
+    "fields": {
+        "codeA3": "MSR",
+        "name": "Montserrat",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MT",
+    "fields": {
+        "codeA3": "MLT",
+        "name": "Malta",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MU",
+    "fields": {
+        "codeA3": "MUS",
+        "name": "Mauritius",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MV",
+    "fields": {
+        "codeA3": "MDV",
+        "name": "Maldives",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MW",
+    "fields": {
+        "codeA3": "MWI",
+        "name": "Malawi",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MX",
+    "fields": {
+        "codeA3": "MEX",
+        "name": "Mexico",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MY",
+    "fields": {
+        "codeA3": "MYS",
+        "name": "Malaysia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "MZ",
+    "fields": {
+        "codeA3": "MOZ",
+        "name": "Mozambique",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NA",
+    "fields": {
+        "codeA3": "NAM",
+        "name": "Namibia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NC",
+    "fields": {
+        "codeA3": "NCL",
+        "name": "New Caledonia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NE",
+    "fields": {
+        "codeA3": "NER",
+        "name": "Niger",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NF",
+    "fields": {
+        "codeA3": "NFK",
+        "name": "Norfolk Island",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NG",
+    "fields": {
+        "codeA3": "NGA",
+        "name": "Nigeria",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NI",
+    "fields": {
+        "codeA3": "NIC",
+        "name": "Nicaragua",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NL",
+    "fields": {
+        "codeA3": "NLD",
+        "name": "Netherlands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NO",
+    "fields": {
+        "codeA3": "NOR",
+        "name": "Norway",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NP",
+    "fields": {
+        "codeA3": "NPL",
+        "name": "Nepal",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NR",
+    "fields": {
+        "codeA3": "NRU",
+        "name": "Nauru",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NU",
+    "fields": {
+        "codeA3": "NIU",
+        "name": "Niue",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "NZ",
+    "fields": {
+        "codeA3": "NZL",
+        "name": "New Zealand",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "OM",
+    "fields": {
+        "codeA3": "OMN",
+        "name": "Oman",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PA",
+    "fields": {
+        "codeA3": "PAN",
+        "name": "Panama",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PE",
+    "fields": {
+        "codeA3": "PER",
+        "name": "Peru",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PF",
+    "fields": {
+        "codeA3": "PYF",
+        "name": "French Polynesia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PG",
+    "fields": {
+        "codeA3": "PNG",
+        "name": "Papua New Guinea",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PH",
+    "fields": {
+        "codeA3": "PHL",
+        "name": "Philippines",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PK",
+    "fields": {
+        "codeA3": "PAK",
+        "name": "Pakistan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PL",
+    "fields": {
+        "codeA3": "POL",
+        "name": "Poland",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PM",
+    "fields": {
+        "codeA3": "SPM",
+        "name": "Saint Pierre and Miquelon",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PN",
+    "fields": {
+        "codeA3": "PCN",
+        "name": "Pitcairn",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PR",
+    "fields": {
+        "codeA3": "PRI",
+        "name": "Puerto Rico",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PS",
+    "fields": {
+        "codeA3": "PSE",
+        "name": "Palestinian Territory",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PT",
+    "fields": {
+        "codeA3": "PRT",
+        "name": "Portugal",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PW",
+    "fields": {
+        "codeA3": "PLW",
+        "name": "Palau",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "PY",
+    "fields": {
+        "codeA3": "PRY",
+        "name": "Paraguay",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "QA",
+    "fields": {
+        "codeA3": "QAT",
+        "name": "Qatar",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "RE",
+    "fields": {
+        "codeA3": "REU",
+        "name": "R\u00c3\u00a9union",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "RO",
+    "fields": {
+        "codeA3": "ROU",
+        "name": "Romania",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "RS",
+    "fields": {
+        "codeA3": "SRB",
+        "name": "Serbia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "RU",
+    "fields": {
+        "codeA3": "RUS",
+        "name": "Russian Federation",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "RW",
+    "fields": {
+        "codeA3": "RWA",
+        "name": "Rwanda",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SA",
+    "fields": {
+        "codeA3": "SAU",
+        "name": "Saudi Arabia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SB",
+    "fields": {
+        "codeA3": "SLB",
+        "name": "Solomon Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SC",
+    "fields": {
+        "codeA3": "SYC",
+        "name": "Seychelles",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SD",
+    "fields": {
+        "codeA3": "SDN",
+        "name": "Sudan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SE",
+    "fields": {
+        "codeA3": "SWE",
+        "name": "Sweden",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SG",
+    "fields": {
+        "codeA3": "SGP",
+        "name": "Singapore",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SH",
+    "fields": {
+        "codeA3": "SHN",
+        "name": "Saint Helena",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SI",
+    "fields": {
+        "codeA3": "SVN",
+        "name": "Slovenia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SJ",
+    "fields": {
+        "codeA3": "SJM",
+        "name": "Svalbard and Jan Mayen Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SK",
+    "fields": {
+        "codeA3": "SVK",
+        "name": "Slovakia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SL",
+    "fields": {
+        "codeA3": "SLE",
+        "name": "Sierra Leone",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SM",
+    "fields": {
+        "codeA3": "SMR",
+        "name": "San Marino",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SN",
+    "fields": {
+        "codeA3": "SEN",
+        "name": "Senegal",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SO",
+    "fields": {
+        "codeA3": "SOM",
+        "name": "Somalia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SR",
+    "fields": {
+        "codeA3": "SUR",
+        "name": "Suriname",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SS",
+    "fields": {
+        "codeA3": "SSD",
+        "name": "South Sudan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "ST",
+    "fields": {
+        "codeA3": "STP",
+        "name": "Sao Tome and Principe",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SV",
+    "fields": {
+        "codeA3": "SLV",
+        "name": "El Salvador",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SY",
+    "fields": {
+        "codeA3": "SYR",
+        "name": "Syrian Arab Republic\u00c2\u00a0(Syria)",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "SZ",
+    "fields": {
+        "codeA3": "SWZ",
+        "name": "Swaziland",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TC",
+    "fields": {
+        "codeA3": "TCA",
+        "name": "Turks and Caicos Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TD",
+    "fields": {
+        "codeA3": "TCD",
+        "name": "Chad",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TF",
+    "fields": {
+        "codeA3": "ATF",
+        "name": "French Southern Territories",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TG",
+    "fields": {
+        "codeA3": "TGO",
+        "name": "Togo",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TH",
+    "fields": {
+        "codeA3": "THA",
+        "name": "Thailand",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TJ",
+    "fields": {
+        "codeA3": "TJK",
+        "name": "Tajikistan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TK",
+    "fields": {
+        "codeA3": "TKL",
+        "name": "Tokelau",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TL",
+    "fields": {
+        "codeA3": "TLS",
+        "name": "Timor-Leste",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TM",
+    "fields": {
+        "codeA3": "TKM",
+        "name": "Turkmenistan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TN",
+    "fields": {
+        "codeA3": "TUN",
+        "name": "Tunisia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TO",
+    "fields": {
+        "codeA3": "TON",
+        "name": "Tonga",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TR",
+    "fields": {
+        "codeA3": "TUR",
+        "name": "Turkey",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TT",
+    "fields": {
+        "codeA3": "TTO",
+        "name": "Trinidad and Tobago",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TV",
+    "fields": {
+        "codeA3": "TUV",
+        "name": "Tuvalu",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TW",
+    "fields": {
+        "codeA3": "TWN",
+        "name": "Taiwan, Republic of China",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "TZ",
+    "fields": {
+        "codeA3": "TZA",
+        "name": "Tanzania, United Republic of",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "UA",
+    "fields": {
+        "codeA3": "UKR",
+        "name": "Ukraine",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "UG",
+    "fields": {
+        "codeA3": "UGA",
+        "name": "Uganda",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "UM",
+    "fields": {
+        "codeA3": "UMI",
+        "name": "US Minor Outlying Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "US",
+    "fields": {
+        "codeA3": "USA",
+        "name": "United States of America",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "UY",
+    "fields": {
+        "codeA3": "URY",
+        "name": "Uruguay",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "UZ",
+    "fields": {
+        "codeA3": "UZB",
+        "name": "Uzbekistan",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "VA",
+    "fields": {
+        "codeA3": "VAT",
+        "name": "Holy See\u00c2\u00a0(Vatican City State)",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "VC",
+    "fields": {
+        "codeA3": "VCT",
+        "name": "Saint Vincent and Grenadines",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "VE",
+    "fields": {
+        "codeA3": "VEN",
+        "name": "Venezuela\u00c2\u00a0(Bolivarian Republic)",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "VG",
+    "fields": {
+        "codeA3": "VGB",
+        "name": "British Virgin Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "VI",
+    "fields": {
+        "codeA3": "VIR",
+        "name": "Virgin Islands, US",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "VN",
+    "fields": {
+        "codeA3": "VNM",
+        "name": "Viet Nam",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "VU",
+    "fields": {
+        "codeA3": "VUT",
+        "name": "Vanuatu",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "WF",
+    "fields": {
+        "codeA3": "WLF",
+        "name": "Wallis and Futuna Islands",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "WS",
+    "fields": {
+        "codeA3": "WSM",
+        "name": "Samoa",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "YE",
+    "fields": {
+        "codeA3": "YEM",
+        "name": "Yemen",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "YT",
+    "fields": {
+        "codeA3": "MYT",
+        "name": "Mayotte",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "ZA",
+    "fields": {
+        "codeA3": "ZAF",
+        "name": "South Africa",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "ZM",
+    "fields": {
+        "codeA3": "ZMB",
+        "name": "Zambia",
+        "display": false
+    }
+},
+{
+    "model": "www.country",
+    "pk": "ZW",
+    "fields": {
+        "codeA3": "ZWE",
+        "name": "Zimbabwe",
+        "display": false
+    }
+},
+{
+    "model": "www.platform",
+    "pk": 1,
+    "fields": {
+        "name": "iPad"
+    }
+},
+{
+    "model": "www.platform",
+    "pk": 2,
+    "fields": {
+        "name": "iPhone"
+    }
+},
+{
+    "model": "www.platform",
+    "pk": 3,
+    "fields": {
+        "name": "Android"
+    }
+},
+{
+    "model": "www.adtype",
+    "pk": 1,
+    "fields": {
+        "name": "MEDIUM_RECT"
+    }
+},
+{
+    "model": "www.adtype",
+    "pk": 2,
+    "fields": {
+        "name": "REWARDED_VIDEO"
+    }
+},
+{
+    "model": "www.adtype",
+    "pk": 3,
+    "fields": {
+        "name": "INTERSTITIAL"
+    }
+},
+{
+    "model": "www.adtype",
+    "pk": 4,
+    "fields": {
+        "name": "BANNER"
+    }
+},
+{
+    "model": "www.adtype",
+    "pk": 5,
+    "fields": {
+        "name": "LAUNCH_INTERSTITIAL"
+    }
+},
+{
+    "model": "www.adtypeparameter",
+    "pk": 1,
+    "fields": {
+        "name": "waterfallType",
+        "type": 6,
+        "mandatory": false,
+        "editable": true,
+        "default": "WATERFALL_PER_NETWORK",
+        "helpText": null,
+        "definition": "WATERFALL_PER_NETWORK|WATERFALL_GLOBAL",
+        "link": null
+    }
+},
+{
+    "model": "www.adplace",
+    "pk": 1,
+    "fields": {
+        "name": "MIDDLE"
+    }
+},
+{
+    "model": "www.adplace",
+    "pk": 2,
+    "fields": {
+        "name": "START_GAME"
+    }
+},
+{
+    "model": "www.adplace",
+    "pk": 3,
+    "fields": {
+        "name": "END_GAME"
+    }
+},
+{
+    "model": "www.adplace",
+    "pk": 4,
+    "fields": {
+        "name": "LAUNCH"
+    }
+},
+{
+    "model": "www.adplace",
+    "pk": 5,
+    "fields": {
+        "name": "FULL"
+    }
+},
+{
+    "model": "www.adplace",
+    "pk": 6,
+    "fields": {
+        "name": "REWARDS"
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 1,
+    "fields": {
+        "name": "refreshInSeconds",
+        "type": 1,
+        "mandatory": false,
+        "editable": true,
+        "default": "0",
+        "helpText": null,
+        "definition": null,
+        "link": 1
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 2,
+    "fields": {
+        "name": "refreshInSeconds",
+        "type": 5,
+        "mandatory": false,
+        "editable": true,
+        "default": "0",
+        "helpText": null,
+        "definition": null,
+        "link": 5
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 3,
+    "fields": {
+        "name": "showDelayInSec",
+        "type": 5,
+        "mandatory": false,
+        "editable": true,
+        "default": "0",
+        "helpText": null,
+        "definition": null,
+        "link": 5
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 4,
+    "fields": {
+        "name": "minEventsToEnable",
+        "type": 1,
+        "mandatory": false,
+        "editable": true,
+        "default": "0",
+        "helpText": null,
+        "definition": null,
+        "link": 5
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 5,
+    "fields": {
+        "name": "eventsToShow",
+        "type": 1,
+        "mandatory": false,
+        "editable": true,
+        "default": "0",
+        "helpText": null,
+        "definition": null,
+        "link": 5
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 6,
+    "fields": {
+        "name": "countDownProb",
+        "type": 4,
+        "mandatory": false,
+        "editable": true,
+        "default": "100",
+        "helpText": null,
+        "definition": null,
+        "link": 5
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 7,
+    "fields": {
+        "name": "countDownSec",
+        "type": 1,
+        "mandatory": false,
+        "editable": true,
+        "default": "2",
+        "helpText": null,
+        "definition": null,
+        "link": 5
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 8,
+    "fields": {
+        "name": "probability",
+        "type": 4,
+        "mandatory": true,
+        "editable": true,
+        "default": "0",
+        "helpText": null,
+        "definition": null,
+        "link": 3
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 9,
+    "fields": {
+        "name": "useNormalMediumRectSize",
+        "type": 3,
+        "mandatory": true,
+        "editable": true,
+        "default": "True",
+        "helpText": null,
+        "definition": null,
+        "link": 3
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 10,
+    "fields": {
+        "name": "probabilityToShowInterstitial",
+        "type": 4,
+        "mandatory": false,
+        "editable": true,
+        "default": "0",
+        "helpText": null,
+        "definition": null,
+        "link": 3
+    }
+},
+{
+    "model": "www.adplaceparameter",
+    "pk": 11,
+    "fields": {
+        "name": "probability",
+        "type": 4,
+        "mandatory": true,
+        "editable": true,
+        "default": "0",
+        "helpText": null,
+        "definition": null,
+        "link": 2
+    }
+}
+]
