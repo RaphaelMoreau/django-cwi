@@ -108,6 +108,10 @@ class ParametersForm(forms.Form):
         elif param.type == Parameter.FLOAT:
             field=forms.DecimalField(max_digits=5, decimal_places=2, localize=False, **attrs)
             cls = 'param_float'
+        elif param.type == Parameter.CHOICE:
+            c = param.definition.split('|')
+            field=forms.ChoiceField(choices=zip(c,c), **attrs)
+            cls = 'param_choice'
         elif param.type == Parameter.BOOLEAN:
             field=forms.BooleanField(**attrs)
             cls = 'param_boolean'

@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 from decimal import *
 
 #Reference tables
@@ -69,8 +70,7 @@ class ApplicationAdType(models.Model):
         return "%s-%s" % (self.platform, self.adType)
 
     def parameters(self):
-        p = ApplicationAdTypeParameter.objects.filter(applicationAdType=self.id)
-        return AdTypeParameter.objects.filter(adType=self.adType).prefetch_related(models.Prefetch("applicationadtypeparameter_set", queryset=p, to_attr='value'))
+        return AdTypeParameter.get_for(self.id, self.adType)
 
 # application ad place, linked to an application platform and an application ad type
 class ApplicationAdPlace(models.Model):
@@ -84,8 +84,7 @@ class ApplicationAdPlace(models.Model):
         return "%s-%s-%s" % (self.platform, self.adPlace, self.adType.adType)
 
     def parameters(self):
-        p = ApplicationAdPlaceParameter.objects.filter(applicationAdPlace=self.id)
-        return AdPlaceParameter.objects.filter(adPlace=self.adPlace).prefetch_related(models.Prefetch("applicationadplaceparameter_set", queryset=p, to_attr='value'))
+        return AdPlaceParameter.get_for(self.id, self.adPlace)
 
 #utility str to bool conversion function - private
 def _str_to_bool(value):
@@ -98,12 +97,14 @@ class Parameter(models.Model):
     BOOLEAN = 3
     PERCENTAGE = 4
     FLOAT = 5
+    CHOICE = 6
     TYPES_CHOICES = (
         (INTEGER, 'Integer'),
         (STRING, 'String'),
         (BOOLEAN, 'Boolean'),
         (PERCENTAGE, 'Percentage'),
         (FLOAT, 'Float'),
+        (CHOICE, 'Choice'),
     )
     CONVERSIONS={
         INTEGER: ('Integer', int),
@@ -111,6 +112,7 @@ class Parameter(models.Model):
         BOOLEAN: ('Boolean', _str_to_bool),
         PERCENTAGE: ('Percentage', int),
         FLOAT: ('Float', Decimal),
+        CHOICE: ('Choice', str),
     }
     name = models.CharField(max_length=45)
     type = models.IntegerField(choices=TYPES_CHOICES, default=INTEGER)
@@ -118,9 +120,12 @@ class Parameter(models.Model):
     editable = models.BooleanField(default=True)
     default = models.CharField(max_length=100)
     helpText = models.CharField(max_length=200, null=True, blank=True)
+    definition = models.CharField(max_length=200, null=True, blank=True)
 
     def __init__(self, *args, **kwargs):
+        #Call the parent's constructor
         super(Parameter, self).__init__(*args, **kwargs)
+        #Initialize the conversion function
         self.type_text, self.convert = Parameter.CONVERSIONS.get(self.type)
 
     def effective_value(self):
@@ -200,6 +205,26 @@ class Parameter(models.Model):
         # Perform the action and return its value
         return _actions[s](value, parent)
 
+    @classmethod
+    def get_for(cls, id, link_id):
+        #Filter objects on parent's id
+        kw = { cls.parent_name:id }
+        p = cls.child_class.objects.filter(**kw)
+        #Compute the stored value field name to prefetch related objects
+        fn = cls.child_class.__name__.lower()+'_set'
+        return cls.objects.filter(
+                Q(link=link_id)|Q(link__isnull=True)
+            ).prefetch_related(
+                models.Prefetch(
+                    fn,
+                    queryset=p,
+                    to_attr='value'
+                )
+            )
+
+    def __str__(self):
+        return "%s-%s" % (self.link if self.link else "ALL", self.name)
+
     class Meta:
         abstract = True
 
@@ -213,12 +238,9 @@ class ApplicationAdTypeParameter(models.Model):
         return "%s-%s" % (self.applicationAdType, self.parameter)
 
 class AdTypeParameter(Parameter):
-    adType = models.ForeignKey(AdType, on_delete=models.PROTECT)
+    link = models.ForeignKey(AdType, null=True, blank=True, on_delete=models.PROTECT)
     parent_name = 'applicationAdType'
     child_class = ApplicationAdTypeParameter
-
-    def __str__(self):
-        return "%s-%s" % (self.adType, self.name)
 
 # Ad places parameters
 class ApplicationAdPlaceParameter(models.Model):
@@ -230,9 +252,6 @@ class ApplicationAdPlaceParameter(models.Model):
         return "%s-%s" % (self.applicationAdPlace, self.parameter)
 
 class AdPlaceParameter(Parameter):
-    adPlace = models.ForeignKey(AdPlace, on_delete=models.PROTECT)
+    link = models.ForeignKey(AdPlace, null=True, blank=True, on_delete=models.PROTECT)
     parent_name = 'applicationAdPlace'
     child_class = ApplicationAdPlaceParameter
-
-    def __str__(self):
-        return "%s-%s" % (self.adPlace, self.name)
