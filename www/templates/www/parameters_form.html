@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'www/css/main.css' %}">
+<script type="text/javascript" src="{% static 'www/js/params.js' %}"></script>
+</head>
+<body>
+  <h2>Parameters of {{ object_description }} {{ object }} of application {{ application }}</h2>
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {{ message }}
+        {% if message.tags and message.tags == 'success' %}
+          <script language="javascript">window.opener.location.reload();</script>
+        {% endif %}
+      </li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {% for hidden_field in form.hidden_fields %}
+      {{ hidden_field.errors }} {{ hidden_field }}
+    {% endfor %}
+    <table>
+    {% for field,param in form.parameters_fields %}
+    {% if field.errors %}
+    <tr>
+      <td colspan="3" class="param_errors">
+        {{ field.errors }}
+      </td>
+    </tr>
+    {% endif %}
+    <tr>
+      <td class="param_label">
+        {{ field.label_tag }}
+      </td>
+      <td class="param_field">
+        {{ field }}
+      </td>
+      <td class="param_actions">
+        {% if param.editable %}{% if param.mandatory or param.value %}
+          <button id="{{ field.id_for_label }}_reset" onclick="return click_reset('{{ field.id_for_label }}');">Reset</button>
+        {% endif %}{% endif %}
+        {% if not param.mandatory %}
+          <button id="{{ field.id_for_label }}_define" onclick="return click_define('{{ field.id_for_label }}');"{% if param.value or field.errors %} class="hidden_param"{% endif %}>Define</button>
+          <button id="{{ field.id_for_label }}_remove" onclick="return click_remove('{{ field.id_for_label }}');"{% if not field.errors and not param.value %} class="hidden_param"{% endif %}>Remove</button>
+        {% endif %}
+      </td>
+    </tr>
+    {% if param.help_text %}
+    <tr>
+      <td colspan="3" class="param_help">
+        {{ param.help_text }}
+      </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    </table>
+    <button onclick="window.close(); return false">Close window</button><button type="submit">Save changes</button>
+  </form>
+
+</body>
+</html>

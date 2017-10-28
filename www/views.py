@@ -239,58 +239,49 @@ class applicationDelAdPlaceView(LoginRequiredMixin, generic.DeleteView):
         context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
         return context
 
-# View and modify an application ad type parameters
-class applicationAdTypeParametersView(LoginRequiredMixin, generic.edit.FormView):
-    template_name = 'www/applicationadtypeparameters.html'
+#Base class for parameters modification views
+class baseParametersView(LoginRequiredMixin, generic.edit.FormView):
+    template_name = 'www/parameters_form.html'
     form_class = ParametersForm
 
     def get_success_url(self):
         return self.request.get_full_path()
 
     def get_form_kwargs(self):
-        kwargs = super(applicationAdTypeParametersView, self).get_form_kwargs()
-        kwargs['parameters'] = get_object_or_404(ApplicationAdType, pk=self.kwargs['typId']).parameters()
+        kwargs = super(baseParametersView, self).get_form_kwargs()
+        kwargs['parameters'] = get_object_or_404(self.main_class, pk=self.kwargs[self.kw_id]).parameters()
         return kwargs
 
     def get_context_data(self, **kwargs):
-        context = super(applicationAdTypeParametersView, self).get_context_data(**kwargs)
+        context = super(baseParametersView, self).get_context_data(**kwargs)
         context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
-        context['adtype'] = get_object_or_404(ApplicationAdType, pk=self.kwargs['typId'])
-        context['params'] = context['adtype'].parameters()
+        context['object_description'] = self.main_desc
+        obj = get_object_or_404(self.main_class, pk=self.kwargs[self.kw_id])
+        context['object'] = obj
+        context['params'] = self.param_class.get_for(obj, obj.id)
         return context
 
     def form_valid(self, form):
-        applicationAdType = get_object_or_404(ApplicationAdType, pk=self.kwargs['typId'])
+        obj = get_object_or_404(self.main_class, pk=self.kwargs[self.kw_id])
         success = False
         for p in form.parameters:
-            success |= p.store(form.cleaned_data.get('param_%s' % p.id,None), applicationAdType)
-        messages.success(self.request, "Changes saved succesfully" if success else "No modifications")
-        return super(applicationAdTypeParametersView, self).form_valid(form)
+            success |= p.store(form.cleaned_data.get('param_%s' % p.id,None), obj)
+        if success is True:
+            messages.success(self.request, "Changes saved succesfully")
+        else:
+            messages.info(self.request,"No modifications")
+        return super(baseParametersView, self).form_valid(form)
+
+# View and modify an application ad type parameters
+class applicationAdTypeParametersView(baseParametersView):
+    main_desc = 'Ad type'
+    main_class = ApplicationAdType
+    param_class = AdTypeParameter
+    kw_id = 'typId'
 
 # View and modify an application ad place parameters
-class applicationAdPlaceParametersView(LoginRequiredMixin, generic.edit.FormView):
-    template_name = 'www/applicationadplaceparameters.html'
-    form_class = ParametersForm
-
-    def get_success_url(self):
-        return self.request.get_full_path()
-
-    def get_form_kwargs(self):
-        kwargs = super(applicationAdPlaceParametersView, self).get_form_kwargs()
-        kwargs['parameters'] = get_object_or_404(ApplicationAdPlace, pk=self.kwargs['plcId']).parameters()
-        return kwargs
-
-    def get_context_data(self, **kwargs):
-        context = super(applicationAdPlaceParametersView, self).get_context_data(**kwargs)
-        context['application'] = get_object_or_404(Application, pk=self.kwargs['appId'])
-        context['adplace'] = get_object_or_404(ApplicationAdPlace, pk=self.kwargs['plcId'])
-        context['params'] = context['adplace'].parameters()
-        return context
-
-    def form_valid(self, form):
-        applicationAdPlace = get_object_or_404(ApplicationAdPlace, pk=self.kwargs['plcId'])
-        success = False
-        for p in form.parameters:
-            success |= p.store(form.cleaned_data.get('param_%s' % p.id,None), applicationAdPlace)
-        messages.success(self.request, "Changes saved succesfully" if success else "No modifications")
-        return super(applicationAdPlaceParametersView, self).form_valid(form)
+class applicationAdPlaceParametersView(baseParametersView):
+    main_desc = 'Ad place'
+    main_class = ApplicationAdPlace
+    param_class = AdPlaceParameter
+    kw_id = 'plcId'
